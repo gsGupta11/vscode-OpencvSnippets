@@ -1,0 +1,35 @@
+{
+    "name": "opencv-and-ml-snippets",
+    "displayName": "Opencv and ML Snippets",
+    "description": "A simple snippets generator for ML and Opencv",
+    "version": "1.0.0",
+    "publisher": "gsGupta & ShivaniGupta",
+    "homepage": "https://github.com/gsGupta11/opencv-and-ml-snippets/blob/master/README.md",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gsGupta11/opencv-and-ml-snippets"
+      },
+    "engines": {
+        "vscode": "^1.20.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "icon":"./icon.png",
+    "contributes": {
+        "snippets": [
+            {
+                "language": "python",
+                "path": "./snippets/snippets.json"
+            },
+            {
+                "language": "python",
+                "path": "./snippets/mlSnippets/preprocessing.json"
+            },
+            {
+                "language": "python",
+                "path": "./snippets/opencvSnippets/readwrite.json"
+            }
+        ]
+    }
+}

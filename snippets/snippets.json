@@ -1,0 +1,11 @@
+{
+    "numpyimport":{
+      "prefix":"!npim",
+      "body":[
+        "import numpy as np",
+        "x=np.array((2,2),np.uint8)",
+        "print(${1:SOMETHUJN})"
+      ],
+      "description":"This is best"
+    }
+  }
