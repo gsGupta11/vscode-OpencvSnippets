@@ -1,0 +1,83 @@
+{
+    "Read Image":{
+        "prefix":"!rimg",
+        "body":[
+            "import cv2",
+            "${1:VariableName} = cv2.imread(\"${2:Address}\",${3:flag})     #(flag = 0 or 1 or -1)"
+        ],
+        "description":"Read Image locally from any directory of the PC"
+    },
+    
+    "Write Image":{
+        "prefix":"!wimg",
+        "body":[
+            "import cv2",
+            "cv2.imwrite(\"${1:Write Address}\",${2:ImageMatrix})"
+        ],
+        "description":"Writing Image in any directory in the pc"
+    },
+    
+    "Display Image":{
+        "prefix":"!dis",
+        "body":[
+            "import cv2",
+            "cv2.imshow(\"${1:Window Name}\",${2: ImageMatrix})",
+            "cv2.waitKey(${3:time of displaying})",
+            "cv2.destroyAllWindows()"
+        ],
+        "description":"Display the already read Image"
+    },
+
+    "Read Video":{
+        "prefix":"!rvid",
+        "body":[
+            "import cv2",
+            "# In VideoCapture object either Pass address of your Video file",
+            "# Or If the input is the camera, pass 0 instead of the video file",
+            "cap = cv2.VideoCapture(${1:VideoToRead})",
+            "if cap.isOpened() == False:",
+            "    print(\"Error in opening video stream or file\")",
+            "while(cap.isOpened()):",
+            "    ret, frame = cap.read()",
+            "    if ret:",
+            "        # Display the resulting frame",
+            "        cv2.imshow('Frame',frame)",
+            "        # Press esc to exit",
+            "        if cv2.waitKey(20) & 0xFF == 27:",
+            "            break",
+            "    else:",
+            "        break",
+            "cap.release()",
+            "cv2.destroyAllWindows()"
+        ],
+        "description":"Reading a Video from Camera or any file"
+    },
+    "Write Video":{
+        "prefix":"!wvid",
+        "body":[
+            "import cv2",
+            "# Create a Video Reader Object.",
+            "cap = cv2.VideoCapture(${1:VideoToRead})",
+            "if cap.isOpened() == False:",
+            "    print(\"Error in opening video stream or file\")",
+            "#Define the codec for the Video",
+            "fourcc = cv2.VideoWriter_fourcc(\"${2:Fourcc Codec Eg-XVID}\")",
+            "#Create Video Writer Object",
+            "writer = cv2.VideoWriter('${3:Video Writing Address}',fourcc, ${4:fps value}, (int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)),int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))))",
+            "while cap.isOpened():",
+            "    ret, frame = cap.read()",
+            "    if ret:",
+            "        writer.write(frame)",
+            "        cv2.imshow(\"Frame\",frame)",
+            "        # Exit on pressing esc",
+            "        if cv2.waitKey(20) & 0xFF == 27:",
+            "            break",
+            "    else:",
+            "        break",
+            "cap.release()",
+            "writer.release()",
+            "cv2.destroyAllWindows()"
+        ],
+        "description":"Writing a Video in any directory of the PC"
+    }
+}
