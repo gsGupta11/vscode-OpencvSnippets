@@ -29,6 +29,10 @@
             {
                 "language": "python",
                 "path": "./snippets/opencvSnippets/readwrite.json"
+            },
+            {
+                "language": "python",
+                "path": "./snippets/opencvSnippets/shapesnevents.json"
             }
         ]
     }

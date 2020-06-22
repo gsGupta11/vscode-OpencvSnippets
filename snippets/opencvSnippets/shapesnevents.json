@@ -1,0 +1,64 @@
+{
+    "Draw Line":{
+        "prefix":"!oline",
+        "body":[
+            "import cv2",
+            "# Coordinates must be a tuple - (x,y)",
+            "cv2.line(${1:image},(${2:startCoor}),(${3:EndCoor}),(0,0,0),${4:thickness})                   #Color is by default black"   
+        ],
+        "description":"Draw Line on any image"
+    },
+    "Draw Arrowed Line":{
+        "prefix":"!oaline",
+        "body":[
+            "import cv2",
+            "# Coordinates must be a tuple - (x,y)",
+            "cv2.arrowedLine(${1:image},(${2:startCoor}),(${3:EndCoor}),(0,0,0),${4:thickness})                   #Color is by default black"
+        ],
+        "description":"Draw a arrowed line from point1 to point2"
+    },
+    "Draw Rectangle":{
+        "prefix":"!orect",
+        "body":[
+            "import cv2",
+            "# Coordinates must be a tuple - (x,y)",
+            "cv2.rectangle(${1:image},(${2:topLeftCoor}),(${3:bottomRightCoor}),(0,0,0),${4:thickness})                   #Color is by default black"
+        ],
+        "description":"Draw a rectangle on any image"
+    },
+    "Draw Circle":{
+        "prefix":"!ocircle",
+        "body":[
+            "import cv2",
+            "# Coordinates must be a tuple - (x,y)",
+            "cv2.circle(${1:image},(${2:CenterCoordinates}), ${3:radius}, (0, 0, 0) ,${4:thickness})                     #Color is by default black"
+        ],
+        "description":"Draw a Circle at any pt in the image"
+    },
+    "Draw Ellipse":{
+        "prefix":"!oellipse",
+        "body":[
+            "import cv2",
+            "#Coordinates must be a tuple - (x,y)",
+            "cv2.ellipse(${1:image},(${2:CenterCoordinates}),(${4:height},${5:width}),${6: RotationAngle},${7:startingAngle},${8:finalangle},(0, 0, 0),${9:thickness})                        #Color is by default black"
+        ],
+        "description" :"Draw a Ellipse over the image"
+    },
+    "Draw any polygon":{
+        "prefix":"!opoly",
+        "body":[
+            "import cv2",
+            "cv2.polylines(${1:image},[${2:coordinates}],${3:Boolean(True if closed polygon)},(0,0,0))                   #Color is by default black"
+        ],
+        "description":"Draw any polygon on any image"
+    },
+    "Write Text":{
+        "prefix":"!otext",
+        "body":[
+            "import cv2",
+            "font = cv2.${1:fontstyle}",
+            "cv2.putText(${2:image}, \"${3:text}\", (${4:Coordinates}),font, ${5:fontsize}, (0, 0, 0),${6:thickness}, cv2.${7:LineType})"
+        ],
+        "description":"Draw any text on any image"
+    }
+}
