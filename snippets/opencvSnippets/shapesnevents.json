@@ -60,5 +60,47 @@
             "cv2.putText(${2:image}, \"${3:text}\", (${4:Coordinates}),font, ${5:fontsize}, (0, 0, 0),${6:thickness}, cv2.${7:LineType})"
         ],
         "description":"Draw any text on any image"
+    },
+    "Print all Events":{
+        "prefix":"!olistevents",
+        "body":[
+            "import cv2",
+            "for i in dir(cv2):",
+            "    if \"EVENT\" in i:",
+            "        print(i)"
+        ],
+        "description":"Enlists all the events available in opencv"
+    },
+    "Handle Evnets":{
+        "prefix":"!ohmevent",
+        "body":[
+            "import cv2",
+            "def handle_event(event, x, y, flags, param):",
+            "    if event == cv2.${1:Event Name}:",
+            "    # Do Whatever you want to, when the event occurs",
+            "cv2.namedWindow(\"${2:Window Name}\")",
+            "cv2.setMouseCallback(\"${2:Window Name}\", handle_event)",
+            "# Attach a image (On which you want to handle the event) to the same window (${2:Window Name})."
+        ],
+        "description":"Provide basic layout to handle all mouse events."
+    },
+    "Create Trackbar":{
+        "prefix":"!octrack",
+        "body":[
+            "# The function attached to the trackbar.",
+            "def func(pos):",
+            "    print(pos)",
+            "import cv2",
+            "cv2.namedWindow(\"${1:WindowName}\")",
+            "cv2.createTrackbar('${2:TrackbarName}', \"${1:WindowName}\", ${3:Intialpos}, ${4:FinalPos}, func)"
+        ],
+        "description":"Creates a trackbar on the Same Window."
+    },
+    "Getting Trackbar Position":{
+        "prefix":"!otrackpos",
+        "body":[
+            "cv2.getTrackbarPos(\"${1:TrackbarName}\",\"${2:WindowName}\")"
+        ],
+        "description":"Gives the position of trackbar at any time."
     }
 }
