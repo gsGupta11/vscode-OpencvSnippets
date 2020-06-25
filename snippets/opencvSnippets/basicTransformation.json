@@ -21,6 +21,7 @@
         "prefix":"!odilate",
         "body":[
             "import cv2",
+            "import numpy as np",
             "kernel = np.ones((${1:size},${1:size}),np.uint8)",
             "dilatedimg = cv2.dilate(${2:image},kernel,iterations = ${3:number})"
         ],
@@ -30,6 +31,7 @@
         "prefix":"!oerode",
         "body":[
             "import cv2",
+            "import numpy as np",
             "kernel = np.ones((${1:size},${1:size}),np.uint8)",
             "erodedimg = cv2.erode(${2:image},kernel,iterations = ${3:number})"
         ],
@@ -39,9 +41,10 @@
         "prefix":"!omorphex",
         "body":[
             "import cv2",
+            "import numpy as np",
             "kernel = np.ones((${1:size},${1:size}),np.uint8)",
-            "morphedimg = morphologyEx(${1:image}, ${2:dst}, cv2.${3:TransformationType}, kernel)",
-            "TransformationType - MORPH_BLACKHAT, MORPH_CLOSE, MORPH_CROSS, MORPH_DILATE, MORPH_ELLIPSE, MORPH_ERODE, MORPH_GRADIENT, MORPH_OPEN, MORPH_RECT, MORPH_TOPHAT, etc"
+            "morphedimg = cv2.morphologyEx(${2:image}, ${3:dst}, cv2.${4:TransformationType}, kernel)",
+            "#TransformationType - MORPH_BLACKHAT, MORPH_CLOSE, MORPH_CROSS, MORPH_DILATE, MORPH_ELLIPSE, MORPH_ERODE, MORPH_GRADIENT, MORPH_OPEN, MORPH_RECT, MORPH_TOPHAT, etc"
         ],
         "description":"Mainly used with binary images to remove the noise from them."
     },
@@ -49,7 +52,7 @@
         "prefix":"!oblur",
         "body":[
             "import cv2",
-            "blurimg = cv2.blur(${1:image},(${2:kernelsize},{2:kernelsize}))"
+            "blurimg = cv2.blur(${1:image},(${2:kernelsize},${2:kernelsize}))"
         ],
         "description":"Used for smoothning of image."
     },
@@ -57,7 +60,7 @@
         "prefix":"!ogblur",
         "body":[
             "import cv2",
-            "gblurimg = cv2.GaussianBlur(${1:image},(${2:kernelsize},{2:kernelsize}),0)"
+            "gblurimg = cv2.GaussianBlur(${1:image},(${2:kernelsize},${2:kernelsize}),0)"
         ],
         "description":"Gaussian kernel is used to reduce image noise and detail"
     },
