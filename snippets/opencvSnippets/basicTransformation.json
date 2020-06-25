@@ -79,5 +79,99 @@
             "bilateralimg = cv2.bilateralFilter(${1:image}, ${2:Diameter},${3:sigmaColor}, ${4:sigmaSpace})"
         ],
         "description":"It is a non-linear, edge-preserving, and noise-reducing smoothing filter for images."
-    }
+    },
+    "Laplacian Edge Detector":{
+        "prefix":"!olapedge",
+        "body":[
+            "import cv2",
+            "import numpy as np",
+            "laplacianimg = cv2.Laplacian(${1:image},cv2.CV_64F,ksize=${2:number})",
+            "laplacianimg = np.uint8(np.absolute(laplacianimg))"
+        ],
+        "description":"Laplacian edge detector uses one kernel and calculates second order derivatives in a single pass."
+    },
+    "Sobel Edge Detector":{
+        "prefix":"!osobedge",
+        "body":[
+            "import cv2",
+            "import numpy as np",
+            "sobelimg = cv2.Sobel(${1:image},cv2.CV_64F,${2:x},${3:y},ksize=${4:number})",
+            "# x=1, y=0 for sobelX edge detector OR x=0, y=1 for sobelY edge detector"
+        ],
+        "description":"It works on the first order derivatives and calculates the first derivatives of the image separately for the X and Y axes to detect edges."
+    },
+    "Canny Edge Detector":{
+        "prefix":"!ocanny",
+        "body":[
+            "import cv2",
+            "cannyimg = cv2.Canny(${1:image},${2:threshold1},${3:threshold2})"
+        ],
+        "description":"Canny Edge Detection is one of the most popular edge detection algorithm."
+    },
+    "Contours":{
+        "prefix":"!ocontours",
+        "body":[
+            "import cv2",
+            "contours, hierarchy = cv2.findContours(${1:binaryImg}, cv2.${2:retrievalMode}, cv2.${3:approximation method})",
+            "cv2.drawContours(${4:Image}, contours, ${5:contourIdx}, (0, 255, 0), ${6:thickness})       #Colors of contours is kept green by default",
+            "#contourIdx = -1 if you want to draw all contours"
+        ],
+        "description":"Contours are the line joining all the points along the boundary of an image that are having the same intensity."
+    },
+    "Shape Detection using Contours":{
+        "prefix":"!oshapedetect",
+        "body":[
+            "import cv2",
+            "import numpy as np",
+            "contours, hierarchy = cv2.findContours(${1:binaryImg}, cv2.${2:retrievalMode}, cv2.${3:approximation method})",
+            "for cnt in contours:",
+            "    approx = cv2.approxPolyDP(cnt, ${4:epsilonValue}, ${5:Boolean(True if closed polygon)})",
+            "    cv2.drawContours(${6:Image}, [approx], 0, (0,255,0), ${7:Thickness})",
+            "    x,y = approx[0][0]",
+            "    if len(approx) == 3:",
+            "        cv2.putText(${6:Image}, \"Triangle\", (x, y), cv2.FONT_HERSHEY_SIMPLEX, ${8:FontScale}, (0,255,0),${9:thickness})",
+            "    elif len(approx) == 4:",
+            "        cv2.putText(${6:Image}, \"Rectangle\", (x, y), cv2.FONT_HERSHEY_SIMPLEX, ${8:FontScale}, (0,255,0),${9:thickness})",
+            "    elif len(approx) == 5:",
+            "        cv2.putText(${6:Image}, \"Pentagon\", (x, y), cv2.FONT_HERSHEY_SIMPLEX, ${8:FontScale}, (0,255,0),${9:thickness})",
+            "    else:",
+            "        cv2.putText(${6:Image}, \"Closed Polygon\", (x, y), cv2.FONT_HERSHEY_SIMPLEX, ${8:FontScale}, (0,255,0),${9:thickness})"
+
+        ],
+        "description":"Detects approx shape for each contour detected in the image."
+    },
+    "Template Matching":{
+        "prefix":"!omatchtemp",
+        "body":[
+            "import cv2",
+            "import numpy as np",
+            "res = cv2.matchTemplate(${1:grayImage},${2:templateImage},cv2.{3:Method})",
+            "# Methods - TM_CCOEFF_NORMED, TM_CCOEFF, TM_CCORR_NORMED",
+            "threshold = ${4:thresholdValue}",
+            "w,h,_ = ${2:templateImage}.shape",
+            "location = np.where( res >= threshold)",
+            "for p in zip(*location[::-1]):",
+            "    cv2.rectangle(${5:image}, p, (p[0] + w, p[1] + h), (0,255,0), ${6:Thickness})"
+        ],
+        "description": "Identifies where the template image is present in the main Image and mark it with a green rectangle."
+    },
+    "Standard Hough Line Transform":{
+        "prefix":"!ohough",
+        "body":[
+            "import cv2",
+            "import numpy as np",
+            "lines = cv2.HoughLines(${1:BinaryImage(Canny)},${2:distanceResolution},${3:angleResolution},${4:threshold})",
+            "for rho,theta in lines[0]:",
+            "    a = np.cos(theta)",
+            "    b = np.sin(theta)",
+            "    x0 = a*rho",
+            "    y0 = b*rho",
+            "    x1 = int(x0 + 1000*(-b))",
+            "    y1 = int(y0 + 1000*(a))",
+            "    x2 = int(x0 - 1000*(-b))",
+            "    y2 = int(y0 - 1000*(a))",
+            "    cv2.line(${5:image},(x1,y1),(x2,y2),(0,255,0),${6:thickness})"
+        ],
+        "description": "Detects straight lines in the image even if they are bit distorted."
+    } 
 }
