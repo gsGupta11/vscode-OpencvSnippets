@@ -33,6 +33,10 @@
             {
                 "language": "python",
                 "path": "./snippets/opencvSnippets/shapesnevents.json"
+            },
+            {
+                "language": "python",
+                "path": "./snippets/opencvSnippets/basicTransformation.json"
             }
         ]
     }

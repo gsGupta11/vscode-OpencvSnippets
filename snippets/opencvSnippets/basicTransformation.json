@@ -1,0 +1,80 @@
+{
+    "Simple Thresholding":{
+        "prefix":"!othresh",
+        "body":[
+            "import cv2",
+            "ret, threshimg = cv2.threshold(${1:image}, ${2:thresholdValue}, ${3:maxVal}, cv2.${4:thresholdingTechnique})",
+            "# Thresholding Technique - cv2.THRESH_BINARY,cv2.THRESH_BINARY_INV,cv2.THRESH_TRUNC,cv2.THRESH_TOZERO,cv2.THRESH_TOZERO_INV etc"
+        ],
+        "description":"In this Simple Thresholding - For every pixel, the same threshold value is applied. If the pixel value is smaller than the threshold, it is set to 0, otherwise, it is set to a maximum value."
+    },
+    "Adaptive Thresholding":{
+        "prefix":"!oathresh",
+        "body":[
+            "import cv2",
+            "threshimg = cv2.adaptiveThreshold(${1:img}, ${2:maxVal}, cv2.${3:adaptiveMethod}, cv2.${4:thresholdType}, ${5:blockSize}, ${6:constant})",
+            "# Adaptive Method -  cv2.ADAPTIVE_THRESH_MEAN_C, cv2.ADAPTIVE_THRESH_GAUSSIAN_C"
+        ],
+        "description":"In Adaptive thresholding, the threshold value is calculated for smaller regions. This leads to different threshold values for different regions with respect to the change in lighting and thus gives better results."
+    },
+    "Dilation":{
+        "prefix":"!odilate",
+        "body":[
+            "import cv2",
+            "kernel = np.ones((${1:size},${1:size}),np.uint8)",
+            "dilatedimg = cv2.dilate(${2:image},kernel,iterations = ${3:number})"
+        ],
+        "description":"Mainly used with binary images to remove the noise from them. It makes the object in white bigger."
+    },
+    "Erosion":{
+        "prefix":"!oerode",
+        "body":[
+            "import cv2",
+            "kernel = np.ones((${1:size},${1:size}),np.uint8)",
+            "erodedimg = cv2.erode(${2:image},kernel,iterations = ${3:number})"
+        ],
+        "description":"Mainly used with binary images to remove the noise from them. It makes the object in white smaller."
+    },
+    "MorphologyEx":{
+        "prefix":"!omorphex",
+        "body":[
+            "import cv2",
+            "kernel = np.ones((${1:size},${1:size}),np.uint8)",
+            "morphedimg = morphologyEx(${1:image}, ${2:dst}, cv2.${3:TransformationType}, kernel)",
+            "TransformationType - MORPH_BLACKHAT, MORPH_CLOSE, MORPH_CROSS, MORPH_DILATE, MORPH_ELLIPSE, MORPH_ERODE, MORPH_GRADIENT, MORPH_OPEN, MORPH_RECT, MORPH_TOPHAT, etc"
+        ],
+        "description":"Mainly used with binary images to remove the noise from them."
+    },
+    "Simple Blurring":{
+        "prefix":"!oblur",
+        "body":[
+            "import cv2",
+            "blurimg = cv2.blur(${1:image},(${2:kernelsize},{2:kernelsize}))"
+        ],
+        "description":"Used for smoothning of image."
+    },
+    "Gaussian Blurring":{
+        "prefix":"!ogblur",
+        "body":[
+            "import cv2",
+            "gblurimg = cv2.GaussianBlur(${1:image},(${2:kernelsize},{2:kernelsize}),0)"
+        ],
+        "description":"Gaussian kernel is used to reduce image noise and detail"
+    },
+    "Median Blur":{
+        "prefix":"!omedblur",
+        "body":[
+            "import cv2",
+            "medblurimg = cv2.medianBlur(${1:image}, ${2:kernelSize})"
+        ],
+        "description":"It is a non-linear digital filtering technique, often used to remove noise from an image or signal."
+    },
+    "Bilateral Blur":{
+        "prefix":"!obblur",
+        "body":[
+            "import cv2",
+            "bilateralimg = cv2.bilateralFilter(${1:image}, ${2:Diameter},${3:sigmaColor}, ${4:sigmaSpace})"
+        ],
+        "description":"It is a non-linear, edge-preserving, and noise-reducing smoothing filter for images."
+    }
+}
