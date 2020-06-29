@@ -2,7 +2,7 @@
     "Draw Line":{
         "prefix":"!oline",
         "body":[
-            "import cv2",
+            "import cv2           #Import only if not previously imported",
             "# Coordinates must be a tuple - (x,y)",
             "cv2.line(${1:image},(${2:startCoor}),(${3:EndCoor}),(0,0,0),${4:thickness})                   #Color is by default black"   
         ],
@@ -11,7 +11,7 @@
     "Draw Arrowed Line":{
         "prefix":"!oaline",
         "body":[
-            "import cv2",
+            "import cv2           #Import only if not previously imported",
             "# Coordinates must be a tuple - (x,y)",
             "cv2.arrowedLine(${1:image},(${2:startCoor}),(${3:EndCoor}),(0,0,0),${4:thickness})                   #Color is by default black"
         ],
@@ -20,7 +20,7 @@
     "Draw Rectangle":{
         "prefix":"!orect",
         "body":[
-            "import cv2",
+            "import cv2           #Import only if not previously imported",
             "# Coordinates must be a tuple - (x,y)",
             "cv2.rectangle(${1:image},(${2:topLeftCoor}),(${3:bottomRightCoor}),(0,0,0),${4:thickness})                   #Color is by default black"
         ],
@@ -29,7 +29,7 @@
     "Draw Circle":{
         "prefix":"!ocircle",
         "body":[
-            "import cv2",
+            "import cv2           #Import only if not previously imported",
             "# Coordinates must be a tuple - (x,y)",
             "cv2.circle(${1:image},(${2:CenterCoordinates}), ${3:radius}, (0, 0, 0) ,${4:thickness})                     #Color is by default black"
         ],
@@ -38,7 +38,7 @@
     "Draw Ellipse":{
         "prefix":"!oellipse",
         "body":[
-            "import cv2",
+            "import cv2           #Import only if not previously imported",
             "#Coordinates must be a tuple - (x,y)",
             "cv2.ellipse(${1:image},(${2:CenterCoordinates}),(${4:height},${5:width}),${6: RotationAngle},${7:startingAngle},${8:finalangle},(0, 0, 0),${9:thickness})                        #Color is by default black"
         ],
@@ -47,7 +47,7 @@
     "Draw any polygon":{
         "prefix":"!opoly",
         "body":[
-            "import cv2",
+            "import cv2           #Import only if not previously imported",
             "cv2.polylines(${1:image},[${2:coordinates}],${3:Boolean(True if closed polygon)},(0,0,0))                   #Color is by default black"
         ],
         "description":"Draw any polygon on any image"
@@ -55,7 +55,7 @@
     "Write Text":{
         "prefix":"!otext",
         "body":[
-            "import cv2",
+            "import cv2           #Import only if not previously imported",
             "font = cv2.${1:fontstyle}",
             "cv2.putText(${2:image}, \"${3:text}\", (${4:Coordinates}),font, ${5:fontsize}, (0, 0, 0),${6:thickness}, cv2.${7:LineType})"
         ],
@@ -64,7 +64,7 @@
     "Print all Events":{
         "prefix":"!olistevents",
         "body":[
-            "import cv2",
+            "import cv2           #Import only if not previously imported",
             "for i in dir(cv2):",
             "    if \"EVENT\" in i:",
             "        print(i)"
@@ -74,7 +74,7 @@
     "Handle Evnets":{
         "prefix":"!ohmevent",
         "body":[
-            "import cv2",
+            "import cv2           #Import only if not previously imported",
             "def handle_event(event, x, y, flags, param):",
             "    if event == cv2.${1:Event Name}:",
             "    # Do Whatever you want to, when the event occurs",
@@ -90,7 +90,7 @@
             "# The function attached to the trackbar.",
             "def func(pos):",
             "    print(pos)",
-            "import cv2",
+            "import cv2           #Import only if not previously imported",
             "cv2.namedWindow(\"${1:WindowName}\")",
             "cv2.createTrackbar('${2:TrackbarName}', \"${1:WindowName}\", ${3:Intialpos}, ${4:FinalPos}, func)"
         ],
@@ -106,7 +106,7 @@
     "Convert Color":{
         "prefix":"!ocvtcolor",
         "body":[
-            "import cv2",
+            "import cv2           #Import only if not previously imported",
             "img = cv2.cvtColor(${1:image},cv2.COLOR_${2:code})"
         ],
         "description":"Converts the color of image from one format to other"
@@ -114,7 +114,7 @@
     "HSV Color Indentification":{
         "prefix":"!ohsvcoloriden",
         "body":[
-            "import cv2",
+            "import cv2           #Import only if not previously imported",
             "import numpy as np",
             "hsv = cv2.cvtColor(${1:image}, cv2.COLOR_BGR2HSV)",
             "lower_color_range = np.array([${2:lower hue},${3:lower saturation},${4:lower value}])",
