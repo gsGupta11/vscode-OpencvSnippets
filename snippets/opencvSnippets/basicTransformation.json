@@ -104,7 +104,7 @@
         "prefix":"!ocanny",
         "body":[
             "import cv2",
-            "cannyimg = cv2.Canny(${1:image},${2:threshold1},${3:threshold2})"
+            "cannyimg = cv2.Canny(${1:image},${2:threshold1},${3:threshold2},apertureSize = ${4:number})"
         ],
         "description":"Canny Edge Detection is one of the most popular edge detection algorithm."
     },
@@ -145,10 +145,10 @@
         "body":[
             "import cv2",
             "import numpy as np",
-            "res = cv2.matchTemplate(${1:grayImage},${2:templateImage},cv2.{3:Method})",
+            "res = cv2.matchTemplate(${1:grayImage},${2:graytemplateImage},cv2.${3:Method})",
             "# Methods - TM_CCOEFF_NORMED, TM_CCOEFF, TM_CCORR_NORMED",
             "threshold = ${4:thresholdValue}",
-            "w,h,_ = ${2:templateImage}.shape",
+            "w,h = ${2:templateImage}.shape",
             "location = np.where( res >= threshold)",
             "for p in zip(*location[::-1]):",
             "    cv2.rectangle(${5:image}, p, (p[0] + w, p[1] + h), (0,255,0), ${6:Thickness})"
@@ -161,7 +161,8 @@
             "import cv2",
             "import numpy as np",
             "lines = cv2.HoughLines(${1:BinaryImage(Canny)},${2:distanceResolution},${3:angleResolution},${4:threshold})",
-            "for rho,theta in lines[0]:",
+            "for line in lines:",
+            "    rho,theta = line[0]",
             "    a = np.cos(theta)",
             "    b = np.sin(theta)",
             "    x0 = a*rho",
@@ -173,5 +174,28 @@
             "    cv2.line(${5:image},(x1,y1),(x2,y2),(0,255,0),${6:thickness})"
         ],
         "description": "Detects straight lines in the image even if they are bit distorted."
-    } 
+    },
+    "Probabilistic Hough Line Transform" :{
+        "prefix":"!ophough",
+        "body":[
+            "import cv2",
+            "import numpy as np",
+            "lines = cv2.HoughLinesP(${1:BinaryImage(Canny)},${2:distanceResolution},${3:angleResolution},${4:threshold},minLineLength=${5:integer},maxLineGap=${6:integer})",
+            "for line in lines:",
+            "    x1,y1,x2,y2 = line[0]",
+            "    cv2.line(${7:image},(x1,y1),(x2,y2),(0,255,0),${8:thickness})"
+        ],
+        "description":"Detects straight lines of finite length in the image."
+    },
+    "Haar Cascades":{
+        "prefix":"!ohaarc",
+        "body":[
+            "import cv2",
+            "cascade = cv2.CascadeClassifier('${1:Address of Downloaded Classifier}')",
+            "coor = cascade.detectMultiScale(${2:grayimage}, ${3:scaleFactor}, ${4:minNeighbors}, ${5:minSize}, ${6:maxSize})",
+            "for (x, y, w, h) in coor:",
+            "    cv2.rectangle(${7:image},(x,y),(x+w,y+h),(0,255,0),${8:thickness})"
+        ],
+        "description":"Trained models which can be used for identification of various parts of image such as face, eyes etc."
+    }
 }
