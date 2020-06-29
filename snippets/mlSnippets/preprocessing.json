@@ -52,7 +52,4 @@
         "description":"convert raw image dataset into a generator iterator type object suitable to be used in model.fit() method."
       
     }
-
-
-
 }
