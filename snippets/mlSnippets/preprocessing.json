@@ -1,0 +1,55 @@
+{
+    "csv data preprocessing":{
+        "prefix":"!mcsv_pre",
+        "body":[
+            "import pandas as pd",
+            "dataset = pd.read_csv(\"${1:Address of the csv file}\")",
+            "# it is pre-ssumed that in csv file dependent vector y is present in the end line while feature vector occupy the other lines.",
+            "# you can change accordingly",
+            "X = dataset.iloc[:, :-1].values",
+            "Y = dataset.iloc[:, -1].values"
+        ],
+        "description":"preprocess a csv file dataset into required format"
+    },
+
+    "image data preprocessing":{
+        "prefix":"!mimage_pre",
+        "body":[
+            "import os",
+            "import cv2",
+            "import numpy as np",
+            "dirname = \"${1:Address of dataset}\"",
+            "dir_list = os.listdir(dirname)",
+            "images =[cv2.imread(os.path.join(dirname,img),${2:flag}) for img in dir_list]",
+            "# flag = 0 or 1 or -1",   
+            "images = [cv2.cvtColor(img, cv2.COLOR_BGR2RGB) for img in images]",
+            " #use the above line of code only in case of coloured images . ",
+            "images = [cv2.resize(img,(${3:width of image},${4:height of image})) for img in images]",
+            "images = np.array(images)",
+            "# images is now a numpy array of shape (total_images,width,height,channels) of all the images stored in directory and in numpy array format"
+           
+        ],
+        "description":"convert raw image dataset into an numpy array"
+    },
+
+    "images preprocessing with normalization using generator ":{
+        "prefix":"!mimg_gen",
+        "body":[
+            "from tensorflow.keras.preprocessing.image import ImageDataGenerator",
+            "import numpy as np",
+            "train_datagen = ImageDataGenerator(rescale=1./255, shear_range=0.2, zoom_range=0.2, horizontal_flip=True,)",
+            "test_datagen = ImageDataGenerator(rescale=1./255)",
+            "X_train = train_datagen.flow_from_directory(  \"${1:Address of training dataset}\", target_size=(${2:width of image},${3:height of image}), batch_size=${4:Batch_size} )",
+            "X_test = test_datagen.flow_from_directory( \"${5:Address of testing dataset}\", target_size=(${2:width of image},${3:height of image}), batch_size=${4:Batch_size} )",
+            "#use the above 2 lines of code in case u don't have classes,else use the 2 lines of code given below",
+            "X_train,Y_train = train_datagen.flow_from_directory(  \"${1:Address of dataset}\", target_size=(${2:width of image},${3:height of image}), batch_size=${4:Batch_size} )",
+            "X_test,Y_test = test_datagen.flow_from_directory( \"${5:Address of testing dataset}\", target_size=(${2:width of image},${3:height of image}), batch_size=${4:Batch_size} )",
+            "# Directory u r providing should be the main directory which should contain sub-directories",
+            "# each sub -direc. should have images of a particular class .if there are no classes just keep all the pic in 1 sub-direc. ",
+            "# the above preprocessed data(X_train or Y_train,etc) is a generator iterator type object ,to train the model use model.fit() of keras",
+            "# or first convert the generator iterator to numpy array format."
+        ],
+        "description":"convert raw image dataset into a generator iterator type object suitable to be used in model.fit() method."
+      
+    }
+}
