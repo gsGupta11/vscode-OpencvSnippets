@@ -2,7 +2,8 @@
     "Simple Thresholding":{
         "prefix":"!othresh",
         "body":[
-            "import cv2           #Import only if not previously imported",
+            "#Import only if not previously imported",
+            "import cv2",
             "ret, threshimg = cv2.threshold(${1:image}, ${2:thresholdValue}, ${3:maxVal}, cv2.${4:thresholdingTechnique})",
             "# Thresholding Technique - cv2.THRESH_BINARY,cv2.THRESH_BINARY_INV,cv2.THRESH_TRUNC,cv2.THRESH_TOZERO,cv2.THRESH_TOZERO_INV etc"
         ],
@@ -11,7 +12,8 @@
     "Adaptive Thresholding":{
         "prefix":"!oathresh",
         "body":[
-            "import cv2           #Import only if not previously imported",
+            "#Import only if not previously imported",
+            "import cv2",
             "threshimg = cv2.adaptiveThreshold(${1:img}, ${2:maxVal}, cv2.${3:adaptiveMethod}, cv2.${4:thresholdType}, ${5:blockSize}, ${6:constant})",
             "# Adaptive Method -  cv2.ADAPTIVE_THRESH_MEAN_C, cv2.ADAPTIVE_THRESH_GAUSSIAN_C"
         ],
@@ -20,7 +22,8 @@
     "Dilation":{
         "prefix":"!odilate",
         "body":[
-            "import cv2           #Import only if not previously imported",
+            "#Import only if not previously imported",
+            "import cv2",
             "import numpy as np",
             "kernel = np.ones((${1:size},${1:size}),np.uint8)",
             "dilatedimg = cv2.dilate(${2:image},kernel,iterations = ${3:number})"
@@ -30,7 +33,8 @@
     "Erosion":{
         "prefix":"!oerode",
         "body":[
-            "import cv2           #Import only if not previously imported",
+            "#Import only if not previously imported",
+            "import cv2",
             "import numpy as np",
             "kernel = np.ones((${1:size},${1:size}),np.uint8)",
             "erodedimg = cv2.erode(${2:image},kernel,iterations = ${3:number})"
@@ -40,7 +44,8 @@
     "MorphologyEx":{
         "prefix":"!omorphex",
         "body":[
-            "import cv2           #Import only if not previously imported",
+            "#Import only if not previously imported",
+            "import cv2",
             "import numpy as np",
             "kernel = np.ones((${1:size},${1:size}),np.uint8)",
             "morphedimg = cv2.morphologyEx(${2:image}, ${3:dst}, cv2.${4:TransformationType}, kernel)",
@@ -51,7 +56,8 @@
     "Simple Blurring":{
         "prefix":"!oblur",
         "body":[
-            "import cv2           #Import only if not previously imported",
+            "#Import only if not previously imported",
+            "import cv2",
             "blurimg = cv2.blur(${1:image},(${2:kernelsize},${2:kernelsize}))"
         ],
         "description":"Used for smoothning of image."
@@ -59,7 +65,8 @@
     "Gaussian Blurring":{
         "prefix":"!ogblur",
         "body":[
-            "import cv2           #Import only if not previously imported",
+            "#Import only if not previously imported",
+            "import cv2",
             "gblurimg = cv2.GaussianBlur(${1:image},(${2:kernelsize},${2:kernelsize}),0)"
         ],
         "description":"Gaussian kernel is used to reduce image noise and detail"
@@ -67,7 +74,8 @@
     "Median Blur":{
         "prefix":"!omedblur",
         "body":[
-            "import cv2           #Import only if not previously imported",
+            "#Import only if not previously imported",
+            "import cv2",
             "medblurimg = cv2.medianBlur(${1:image}, ${2:kernelSize})"
         ],
         "description":"It is a non-linear digital filtering technique, often used to remove noise from an image or signal."
@@ -75,7 +83,8 @@
     "Bilateral Blur":{
         "prefix":"!obblur",
         "body":[
-            "import cv2           #Import only if not previously imported",
+            "#Import only if not previously imported",
+            "import cv2",
             "bilateralimg = cv2.bilateralFilter(${1:image}, ${2:Diameter},${3:sigmaColor}, ${4:sigmaSpace})"
         ],
         "description":"It is a non-linear, edge-preserving, and noise-reducing smoothing filter for images."
@@ -83,7 +92,8 @@
     "Laplacian Edge Detector":{
         "prefix":"!olapedge",
         "body":[
-            "import cv2           #Import only if not previously imported",
+            "#Import only if not previously imported",
+            "import cv2",
             "import numpy as np",
             "laplacianimg = cv2.Laplacian(${1:image},cv2.CV_64F,ksize=${2:number})",
             "laplacianimg = np.uint8(np.absolute(laplacianimg))"
@@ -93,7 +103,8 @@
     "Sobel Edge Detector":{
         "prefix":"!osobedge",
         "body":[
-            "import cv2           #Import only if not previously imported",
+            "#Import only if not previously imported",
+            "import cv2",
             "import numpy as np",
             "sobelimg = cv2.Sobel(${1:image},cv2.CV_64F,${2:x},${3:y},ksize=${4:number})",
             "# x=1, y=0 for sobelX edge detector OR x=0, y=1 for sobelY edge detector"
@@ -103,7 +114,8 @@
     "Canny Edge Detector":{
         "prefix":"!ocanny",
         "body":[
-            "import cv2           #Import only if not previously imported",
+            "#Import only if not previously imported",
+            "import cv2",
             "cannyimg = cv2.Canny(${1:image},${2:threshold1},${3:threshold2},apertureSize = ${4:number})"
         ],
         "description":"Canny Edge Detection is one of the most popular edge detection algorithm."
@@ -111,7 +123,8 @@
     "Contours":{
         "prefix":"!ocontours",
         "body":[
-            "import cv2           #Import only if not previously imported",
+            "#Import only if not previously imported",
+            "import cv2",
             "contours, hierarchy = cv2.findContours(${1:binaryImg}, cv2.${2:retrievalMode}, cv2.${3:approximation method})",
             "cv2.drawContours(${4:Image}, contours, ${5:contourIdx}, (0, 255, 0), ${6:thickness})       #Colors of contours is kept green by default",
             "#contourIdx = -1 if you want to draw all contours"
@@ -121,7 +134,8 @@
     "Shape Detection using Contours":{
         "prefix":"!oshapedetect",
         "body":[
-            "import cv2           #Import only if not previously imported",
+            "#Import only if not previously imported",
+            "import cv2",
             "import numpy as np",
             "contours, hierarchy = cv2.findContours(${1:binaryImg}, cv2.${2:retrievalMode}, cv2.${3:approximation method})",
             "for cnt in contours:",
@@ -143,7 +157,8 @@
     "Template Matching":{
         "prefix":"!omatchtemp",
         "body":[
-            "import cv2           #Import only if not previously imported",
+            "#Import only if not previously imported",
+            "import cv2",
             "import numpy as np",
             "res = cv2.matchTemplate(${1:grayImage},${2:graytemplateImage},cv2.${3:Method})",
             "# Methods - TM_CCOEFF_NORMED, TM_CCOEFF, TM_CCORR_NORMED",
@@ -158,7 +173,8 @@
     "Standard Hough Line Transform":{
         "prefix":"!ohough",
         "body":[
-            "import cv2           #Import only if not previously imported",
+            "#Import only if not previously imported",
+            "import cv2",
             "import numpy as np",
             "lines = cv2.HoughLines(${1:BinaryImage(Canny)},${2:distanceResolution},${3:angleResolution},${4:threshold})",
             "for line in lines:",
@@ -178,7 +194,8 @@
     "Probabilistic Hough Line Transform" :{
         "prefix":"!ophough",
         "body":[
-            "import cv2           #Import only if not previously imported",
+            "#Import only if not previously imported",
+            "import cv2",
             "import numpy as np",
             "lines = cv2.HoughLinesP(${1:BinaryImage(Canny)},${2:distanceResolution},${3:angleResolution},${4:threshold},minLineLength=${5:integer},maxLineGap=${6:integer})",
             "for line in lines:",
@@ -190,7 +207,8 @@
     "Haar Cascades":{
         "prefix":"!ohaarc",
         "body":[
-            "import cv2           #Import only if not previously imported",
+            "#Import only if not previously imported",
+            "import cv2",
             "cascade = cv2.CascadeClassifier('${1:Address of Downloaded Classifier}')",
             "coor = cascade.detectMultiScale(${2:grayimage}, ${3:scaleFactor}, ${4:minNeighbors}, ${5:minSize}, ${6:maxSize})",
             "for (x, y, w, h) in coor:",
@@ -201,7 +219,8 @@
     "Harris Corner Detector":{
         "prefix":"!oharrisc",
         "body":[
-            "import cv2           #Import only if not previously imported",
+            "#Import only if not previously imported",
+            "import cv2",
             "import numpy as np",
             "grayimg = cv2.cvtColor(${1:image},cv2.COLOR_BGR2GRAY)",
             "grayfloatimg = np.float32(grayimg)",
@@ -215,7 +234,8 @@
     "Shi-Tomasi Corner Detector":{
         "prefix":"!ogoodf",
         "body":[
-            "import cv2           #Import only if not previously imported",
+            "#Import only if not previously imported",
+            "import cv2",
             "import numpy as np",
             "corners = cv2.goodFeaturesToTrack(${1:grayimg},${2:NoofCorners},${3:quality},${4:minDistance})",
             "corners = np.int0(corners)",
@@ -228,7 +248,8 @@
     "Perspective Transformation":{
         "prefix":"!opers",
         "body":[
-            "import cv2           #Import only if not previously imported",
+            "#Import only if not previously imported",
+            "import cv2",
             "import numpy as np",
             "rows,cols,ch = ${1:image}.shape",
             "pts1 = np.float32([[${2:},${3:}], [${4:}, ${5:}], [${6:}, ${7:}], [${8:}, ${9:}]])        #Coordinates of corners of object in original Image.",
@@ -241,7 +262,8 @@
     "Affine Transformation":{
         "prefix":"!oaffn",
         "body":[
-            "import cv2           #Import only if not previously imported",
+            "#Import only if not previously imported",
+            "import cv2",
             "import numpy as np",
             "rows,cols,ch = ${1:image}.shape",
             "pts1 = np.float32([[${2:},${3:}],[${4:},${5:}],[${6:},${7:}]])",
@@ -254,7 +276,8 @@
     "Rotation of Image":{
         "prefix":"!orotate",
         "body":[
-            "import cv2           #Import only if not previously imported",
+            "#Import only if not previously imported",
+            "import cv2",
             "rows,cols,_ = img.shape",
             "M = cv2.getRotationMatrix2D((cols/2,rows/2),${1:angle},${2:scale})",
             "rotated = cv2.warpAffine(${3:image},M,(cols,rows))"

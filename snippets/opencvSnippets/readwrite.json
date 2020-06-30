@@ -2,7 +2,8 @@
     "Read Image":{
         "prefix":"!orimg",
         "body":[
-            "import cv2           #Import only if not previously imported",
+            "#Import only if not previously imported",
+            "import cv2",
             "${1:VariableName} = cv2.imread(\"${2:Address}\",${3:flag})     #(flag = 0 or 1 or -1)"
         ],
         "description":"Read Image locally from any directory of the PC"
@@ -11,7 +12,8 @@
     "Write Image":{
         "prefix":"!owimg",
         "body":[
-            "import cv2           #Import only if not previously imported",
+            "#Import only if not previously imported",
+            "import cv2",
             "cv2.imwrite(\"${1:Write Address}\",${2:ImageMatrix})"
         ],
         "description":"Writing Image in any directory in the pc"
@@ -20,7 +22,8 @@
     "Display Image":{
         "prefix":"!odis",
         "body":[
-            "import cv2           #Import only if not previously imported",
+            "#Import only if not previously imported",
+            "import cv2",
             "cv2.imshow(\"${1:Window Name}\",${2: ImageMatrix})",
             "cv2.waitKey(${3:time of displaying})",
             "cv2.destroyAllWindows()"
@@ -31,7 +34,8 @@
     "Read Video":{
         "prefix":"!orvid",
         "body":[
-            "import cv2           #Import only if not previously imported",
+            "#Import only if not previously imported",
+            "import cv2",
             "# In VideoCapture object either Pass address of your Video file",
             "# Or If the input is the camera, pass 0 instead of the video file",
             "cap = cv2.VideoCapture(${1:VideoToRead})",
@@ -55,7 +59,8 @@
     "Write Video":{
         "prefix":"!owvid",
         "body":[
-            "import cv2           #Import only if not previously imported",
+            "#Import only if not previously imported",
+            "import cv2",
             "# Create a Video Reader Object.",
             "cap = cv2.VideoCapture(${1:VideoToRead})",
             "if cap.isOpened() == False:",
