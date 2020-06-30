@@ -38,19 +38,15 @@ This Extension can be installed from the Visual Studio Code Marketplace or by se
 | ogblur | Gaussian Blur | Returns Gaussian blur of a image |
 | omedblur | Median Blur | Used for smoothening of image using Median blur |
 | obblur | Bilateral Blur | Used for smoothening of image using Bilateral blur |
-| olapedge | Laplacian Edge Detector
- | Edge Identification using Laplacian Edge Detector |
-| osobedge | Sobel Edge Detector
- | Edge Identification using Sobel Edge Detector |
-| ocanny | Canny Edge Detector
- | Edge Identification using Canny Edge Detector |
+| olapedge | Laplacian Edge Detector| Edge Identification using Laplacian Edge Detector |
+| osobedge | Sobel Edge Detector| Edge Identification using Sobel Edge Detector |
+| ocanny | Canny Edge Detector| Edge Identification using Canny Edge Detector |
 | ocontours | Contours | Identifies and draw contours on the image |
 | oshapedetect | Shape Detection | Detects shapes present in the image and writes the name of the shape in the image. |
 | omatchtem | Template Matching | Matches template in any main image and draws rectangle around the identified template in the main image |
 | ohough | Hough Line Transformation | Detects straight lines of infinite length in the image. |
 | ophough | Probabilistic Hough Line Transform | Detects straight lines of finite length in the image. |
-| ohaarc | Haar Cascades Classifier
- | Provide Layout for using Haar Cascades Classifier |
+| ohaarc | Haar Cascades Classifier| Provide Layout for using Haar Cascades Classifier |
 | oharrisc | Harris Corner Detector | Detects corner in the Given image (Harris Corner Detector) |
 | ogoodf | Shi-Tomasi Corner Detector | Detects desired number of corners in the Given image (Shi-Tomasi Corner Detector) |
 | opers | Perspective Transformation | Returns the perspective transformation of the image |
