@@ -1,6 +1,6 @@
 {
     "Draw Line":{
-        "prefix":"!oline",
+        "prefix":"oline",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -10,7 +10,7 @@
         "description":"Draw Line on any image"
     },
     "Draw Arrowed Line":{
-        "prefix":"!oaline",
+        "prefix":"oaline",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -20,7 +20,7 @@
         "description":"Draw a arrowed line from point1 to point2"
     },
     "Draw Rectangle":{
-        "prefix":"!orect",
+        "prefix":"orect",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -30,7 +30,7 @@
         "description":"Draw a rectangle on any image"
     },
     "Draw Circle":{
-        "prefix":"!ocircle",
+        "prefix":"ocircle",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -40,7 +40,7 @@
         "description":"Draw a Circle at any pt in the image"
     },
     "Draw Ellipse":{
-        "prefix":"!oellipse",
+        "prefix":"oellipse",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -50,7 +50,7 @@
         "description" :"Draw a Ellipse over the image"
     },
     "Draw any polygon":{
-        "prefix":"!opoly",
+        "prefix":"opoly",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -59,7 +59,7 @@
         "description":"Draw any polygon on any image"
     },
     "Write Text":{
-        "prefix":"!otext",
+        "prefix":"otext",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -69,7 +69,7 @@
         "description":"Draw any text on any image"
     },
     "Print all Events":{
-        "prefix":"!olistevents",
+        "prefix":"olistevents",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -80,7 +80,7 @@
         "description":"Enlists all the events available in opencv"
     },
     "Handle Evnets":{
-        "prefix":"!ohmevent",
+        "prefix":"ohmevent",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -94,7 +94,7 @@
         "description":"Provide basic layout to handle all mouse events."
     },
     "Create Trackbar":{
-        "prefix":"!octrack",
+        "prefix":"octrack",
         "body":[
             "# The function attached to the trackbar.",
             "def func(pos):",
@@ -107,14 +107,14 @@
         "description":"Creates a trackbar on the Same Window."
     },
     "Getting Trackbar Position":{
-        "prefix":"!otrackpos",
+        "prefix":"otrackpos",
         "body":[
             "cv2.getTrackbarPos(\"${1:TrackbarName}\",\"${2:WindowName}\")"
         ],
         "description":"Gives the position of trackbar at any time."
     },
     "Convert Color":{
-        "prefix":"!ocvtcolor",
+        "prefix":"ocvtcolor",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -123,7 +123,7 @@
         "description":"Converts the color of image from one format to other"
     },
     "HSV Color Indentification":{
-        "prefix":"!ohsvcoloriden",
+        "prefix":"ohsvcoloriden",
         "body":[
             "#Import only if not previously imported",
             "import cv2",

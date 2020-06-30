@@ -1,6 +1,6 @@
 {
     "Simple Thresholding":{
-        "prefix":"!othresh",
+        "prefix":"othresh",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -10,7 +10,7 @@
         "description":"In this Simple Thresholding - For every pixel, the same threshold value is applied. If the pixel value is smaller than the threshold, it is set to 0, otherwise, it is set to a maximum value."
     },
     "Adaptive Thresholding":{
-        "prefix":"!oathresh",
+        "prefix":"oathresh",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -20,7 +20,7 @@
         "description":"In Adaptive thresholding, the threshold value is calculated for smaller regions. This leads to different threshold values for different regions with respect to the change in lighting and thus gives better results."
     },
     "Dilation":{
-        "prefix":"!odilate",
+        "prefix":"odilate",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -31,7 +31,7 @@
         "description":"Mainly used with binary images to remove the noise from them. It makes the object in white bigger."
     },
     "Erosion":{
-        "prefix":"!oerode",
+        "prefix":"oerode",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -42,7 +42,7 @@
         "description":"Mainly used with binary images to remove the noise from them. It makes the object in white smaller."
     },
     "MorphologyEx":{
-        "prefix":"!omorphex",
+        "prefix":"omorphex",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -54,7 +54,7 @@
         "description":"Mainly used with binary images to remove the noise from them."
     },
     "Simple Blurring":{
-        "prefix":"!oblur",
+        "prefix":"oblur",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -63,7 +63,7 @@
         "description":"Used for smoothning of image."
     },
     "Gaussian Blurring":{
-        "prefix":"!ogblur",
+        "prefix":"ogblur",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -72,7 +72,7 @@
         "description":"Gaussian kernel is used to reduce image noise and detail"
     },
     "Median Blur":{
-        "prefix":"!omedblur",
+        "prefix":"omedblur",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -81,7 +81,7 @@
         "description":"It is a non-linear digital filtering technique, often used to remove noise from an image or signal."
     },
     "Bilateral Blur":{
-        "prefix":"!obblur",
+        "prefix":"obblur",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -90,7 +90,7 @@
         "description":"It is a non-linear, edge-preserving, and noise-reducing smoothing filter for images."
     },
     "Laplacian Edge Detector":{
-        "prefix":"!olapedge",
+        "prefix":"olapedge",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -101,7 +101,7 @@
         "description":"Laplacian edge detector uses one kernel and calculates second order derivatives in a single pass."
     },
     "Sobel Edge Detector":{
-        "prefix":"!osobedge",
+        "prefix":"osobedge",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -112,7 +112,7 @@
         "description":"It works on the first order derivatives and calculates the first derivatives of the image separately for the X and Y axes to detect edges."
     },
     "Canny Edge Detector":{
-        "prefix":"!ocanny",
+        "prefix":"ocanny",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -121,7 +121,7 @@
         "description":"Canny Edge Detection is one of the most popular edge detection algorithm."
     },
     "Contours":{
-        "prefix":"!ocontours",
+        "prefix":"ocontours",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -132,7 +132,7 @@
         "description":"Contours are the line joining all the points along the boundary of an image that are having the same intensity."
     },
     "Shape Detection using Contours":{
-        "prefix":"!oshapedetect",
+        "prefix":"oshapedetect",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -155,7 +155,7 @@
         "description":"Detects approx shape for each contour detected in the image."
     },
     "Template Matching":{
-        "prefix":"!omatchtemp",
+        "prefix":"omatchtemp",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -171,7 +171,7 @@
         "description": "Identifies where the template image is present in the main Image and mark it with a green rectangle."
     },
     "Standard Hough Line Transform":{
-        "prefix":"!ohough",
+        "prefix":"ohough",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -192,7 +192,7 @@
         "description": "Detects straight lines in the image even if they are bit distorted."
     },
     "Probabilistic Hough Line Transform" :{
-        "prefix":"!ophough",
+        "prefix":"ophough",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -205,7 +205,7 @@
         "description":"Detects straight lines of finite length in the image."
     },
     "Haar Cascades":{
-        "prefix":"!ohaarc",
+        "prefix":"ohaarc",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -217,7 +217,7 @@
         "description":"Trained models which can be used for identification of various parts of image such as face, eyes etc."
     },
     "Harris Corner Detector":{
-        "prefix":"!oharrisc",
+        "prefix":"oharrisc",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -232,7 +232,7 @@
         "description":"Detects the corners in the image according the threshold setted."
     },
     "Shi-Tomasi Corner Detector":{
-        "prefix":"!ogoodf",
+        "prefix":"ogoodf",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -246,7 +246,7 @@
         "description":"Detects corners in the image"
     },
     "Perspective Transformation":{
-        "prefix":"!opers",
+        "prefix":"opers",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -260,7 +260,7 @@
         "description":"Changes the perspective of the image or video for getting better insights about the required information"
     },
     "Affine Transformation":{
-        "prefix":"!oaffn",
+        "prefix":"oaffn",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -274,7 +274,7 @@
         "description":"Linear mapping method that preserves points, straight lines, and planes."
     },
     "Rotation of Image":{
-        "prefix":"!orotate",
+        "prefix":"orotate",
         "body":[
             "#Import only if not previously imported",
             "import cv2",

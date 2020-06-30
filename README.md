@@ -1,4 +1,5 @@
-# opencv-and-ml-snippets README
+# Opencv Snippets for Vs Code
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
 This is the README for your extension "opencv-and-ml-snippets". After writing up a brief description, we recommend including the following sections.
 

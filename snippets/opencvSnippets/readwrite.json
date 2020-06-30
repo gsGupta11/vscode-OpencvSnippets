@@ -1,6 +1,6 @@
 {
     "Read Image":{
-        "prefix":"!orimg",
+        "prefix":"orimg",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -10,7 +10,7 @@
     },
     
     "Write Image":{
-        "prefix":"!owimg",
+        "prefix":"owimg",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -20,7 +20,7 @@
     },
     
     "Display Image":{
-        "prefix":"!odis",
+        "prefix":"odis",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -32,7 +32,7 @@
     },
 
     "Read Video":{
-        "prefix":"!orvid",
+        "prefix":"orvid",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
@@ -57,7 +57,7 @@
         "description":"Reading a Video from Camera or any file"
     },
     "Write Video":{
-        "prefix":"!owvid",
+        "prefix":"owvid",
         "body":[
             "#Import only if not previously imported",
             "import cv2",
