@@ -218,7 +218,7 @@
             "import cv2           #Import only if not previously imported",
             "import numpy as np",
             "corners = cv2.goodFeaturesToTrack(${1:grayimg},${2:NoofCorners},${3:quality},${4:minDistance})",
-            "corners = np.int(corners)",
+            "corners = np.int0(corners)",
             "for i in corners:",
             "    x,y = i.ravel()",
             "    cv2.circle(${5:image},(x,y),${6:radius},(0,255,0),-1)"
@@ -229,6 +229,7 @@
         "prefix":"!opers",
         "body":[
             "import cv2           #Import only if not previously imported",
+            "import numpy as np",
             "rows,cols,ch = ${1:image}.shape",
             "pts1 = np.float32([[${2:},${3:}], [${4:}, ${5:}], [${6:}, ${7:}], [${8:}, ${9:}]])        #Coordinates of corners of object in original Image.",
             "pts2 = np.float32([[${10:}, ${11:}], [${12:}, ${13:}], [${14:}, ${15:}], [${16:}, ${17:}]])",
@@ -241,6 +242,7 @@
         "prefix":"!oaffn",
         "body":[
             "import cv2           #Import only if not previously imported",
+            "import numpy as np",
             "rows,cols,ch = ${1:image}.shape",
             "pts1 = np.float32([[${2:},${3:}],[${4:},${5:}],[${6:},${7:}]])",
             "pts2 = np.float32([[${8:},${9:}],[${10:},${11:}],[${12:},${13:}]])",
@@ -253,7 +255,7 @@
         "prefix":"!orotate",
         "body":[
             "import cv2           #Import only if not previously imported",
-            "rows,cols = img.shape",
+            "rows,cols,_ = img.shape",
             "M = cv2.getRotationMatrix2D((cols/2,rows/2),${1:angle},${2:scale})",
             "rotated = cv2.warpAffine(${3:image},M,(cols,rows))"
         ],
