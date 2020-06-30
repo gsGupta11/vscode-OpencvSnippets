@@ -1,7 +1,10 @@
 # Opencv Snippets for Vs Code
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-This is the README for your extension "opencv-and-ml-snippets". After writing up a brief description, we recommend including the following sections.
+This Vs Code extension provides the user with [Opencv](https://opencv.org/) snippets in python. It helps in effectively providing, refactoring and editing the opencv projects in python3.
+
+## Installation
+
+This Extension can be installed from the Visual Studio Code Marketplace or by searching within VS Code.
 
 ## Features
 
@@ -13,7 +16,7 @@ For example if there is an image subfolder under your extension project workspac
 
 > Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
 
-## Requirements
+## Snippets:
 
 If you have any requirements or dependencies, add a section describing those and how to install and configure them.
 

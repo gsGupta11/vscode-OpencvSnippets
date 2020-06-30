@@ -15,7 +15,7 @@
     "categories": [
         "Snippets"
     ],
-    "icon":"./icon.png",
+    "icon":"./icon.jpeg",
     "contributes": {
         "snippets": [
             {
