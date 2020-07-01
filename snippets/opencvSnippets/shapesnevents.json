@@ -118,7 +118,7 @@
         "body":[
             "#Import only if not previously imported",
             "import cv2",
-            "img = cv2.cvtColor(${1:image},cv2.COLOR_${2:code})"
+            "${1:variablename} = cv2.cvtColor(${2:image},cv2.COLOR_${3:code})"
         ],
         "description":"Converts the color of image from one format to other"
     },
