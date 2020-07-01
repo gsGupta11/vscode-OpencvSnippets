@@ -3,8 +3,11 @@
 This Vs Code extension provides the user with [Opencv](https://opencv.org/) snippets in python. It helps in effectively providing, refactoring and editing the opencv projects in python3. All the snippets starts with **"o"**, so typing a letter **o** gives recommendation for all the available opencv snippets.<br />
 Example -
 > This Example detects corner in the image. <br />
+
 ![example1](./static/corner.gif)<br />
+
 > This Example detects shapes in the image.<br />
+
 ![example2](./static/shape.gif)<br />
 
 From the examples above, it can be easily seen that how easy and fast it become to code in Opencv by using this extension. It also saves you from any syntactical mistakes and increase your coding speed by many folds.   
@@ -83,23 +86,11 @@ Report issues and bugs at [Opencv Snippets](https://github.com/gsGupta11/opencv-
 The detailed release notes of Opencv Snippets can be found at -
 - [Opencv Snippets Release Notes](https://github.com/gsGupta11/opencv-snippets/blob/master/CHANGELOG.md) 
 
-### v1.0.0
-- Initial Release of Opencv-Snippets 
-    * Basic Layout of the project setup
-    * Added Image and Video read/write snippets.
 
-### v1.1.0
-- Added Multiple Snippets.
-- Snippets made more generic.
-- Code modularized.
-
-### v1.1.1
-- Added gifs and icons.
-- readme prepared.
-
-### v1.1.2
-- Reformating of code.
-- Minor bug fixes.
+### v1.2.1
+- Improvements and bug fixes.
+- Code cleaned to make it more readable.
+- Comments added.
 
 ### v1.2.0
 - More Snippets added.
@@ -107,10 +98,24 @@ The detailed release notes of Opencv Snippets can be found at -
 - Code quality improvements.
 - Code should run faster now.
 
-### v1.2.1
-- Improvements and bug fixes.
-- Code cleaned to make it more readable.
-- Comments added.
+### v1.1.2
+- Reformating of code.
+- Minor bug fixes.
+
+### v1.1.1
+- Added gifs and icons.
+- readme prepared.
+
+### v1.1.0
+- Added Multiple Snippets.
+- Snippets made more generic.
+- Code modularized.
+
+### v1.0.0
+- Initial Release of Opencv-Snippets 
+    * Basic Layout of the project setup
+    * Added Image and Video read/write snippets.
+
 
 -----------------------------------------------------------------------------------------------------------
 ## License
