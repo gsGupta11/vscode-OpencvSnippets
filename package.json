@@ -4,10 +4,10 @@
     "description": "A simple snippets generator for Opencv",
     "version": "1.0.0",
     "publisher": "gsGupta",
-    "homepage": "https://github.com/gsGupta11/opencv-snippets/blob/master/README.md",
+    "homepage": "https://github.com/gsGupta11/vscode-OpencvSnippets/blob/master/README.md",
     "repository": {
         "type": "git",
-        "url": "https://github.com/gsGupta11/opencv-snippets"
+        "url": "https://github.com/gsGupta11/vscode-OpencvSnippets"
       },
     "engines": {
         "vscode": "^1.20.0"

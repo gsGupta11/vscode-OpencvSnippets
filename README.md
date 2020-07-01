@@ -79,12 +79,12 @@ This Extension can be installed from the Visual Studio Code Marketplace or by se
 
 ## Issues
 
-Report issues and bugs at [Opencv Snippets](https://github.com/gsGupta11/opencv-snippets/issues)
+Report issues and bugs at [Opencv Snippets](https://github.com/gsGupta11/vscode-OpencvSnippets/issues)
 
 ## Release Notes
 
 The detailed release notes of Opencv Snippets can be found at -
-- [Opencv Snippets Release Notes](https://github.com/gsGupta11/opencv-snippets/blob/master/CHANGELOG.md) 
+- [Opencv Snippets Release Notes](https://github.com/gsGupta11/vscode-OpencvSnippets/blob/master/CHANGELOG.md) 
 
 
 ### v1.2.1
@@ -119,7 +119,7 @@ The detailed release notes of Opencv Snippets can be found at -
 
 -----------------------------------------------------------------------------------------------------------
 ## License
-Opencv Snippets is an open-sourced software licensed under the [GNU GENERAL PUBLIC LICENSE](https://github.com/gsGupta11/opencv-snippets/blob/master/LICENSE).
+Opencv Snippets is an open-sourced software licensed under the [GNU GENERAL PUBLIC LICENSE](https://github.com/gsGupta11/vscode-OpencvSnippets/blob/master/LICENSE).
 
 ## About Me
 
@@ -131,6 +131,6 @@ Opencv Snippets is an open-sourced software licensed under the [GNU GENERAL PUBL
 ### For more information
 
 This is a open Source project, so for more information and contribution you can checkout:
-- [Opencv Snippets](https://github.com/gsGupta11/opencv-snippets) 
+- [Opencv Snippets](https://github.com/gsGupta11/vscode-OpencvSnippets) 
 
 **Enjoy!**
