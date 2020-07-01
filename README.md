@@ -1,19 +1,18 @@
 # Opencv Snippets for Vs Code
 
-This Vs Code extension provides the user with [Opencv](https://opencv.org/) snippets in python. It helps in effectively providing, refactoring and editing the opencv projects in python3. All the snippets starts with a **o**, so typing a letter **o** gives recommendation for all the available opencv snippets.
+This Vs Code extension provides the user with [Opencv](https://opencv.org/) snippets in python. It helps in effectively providing, refactoring and editing the opencv projects in python3. All the snippets starts with a **o**, so typing a letter **o** gives recommendation for all the available opencv snippets.<br />
 Example - 
 
-![example1](./static/corner.gif)
+![example1](./static/corner.gif)<br />
 ![example2](./static/shape.gif)
 
-## Installation
+## Installation:
 
 This Extension can be installed from the Visual Studio Code Marketplace or by searching within VS Code.
 
+## Snippets:
 
-## Snippets
-
-| **Trigger** | **Stands For** | **Description** |
+| **Trigger** | **Full Form** | **Description** |
 | --- | --- | --- |
 | **orimg** | Reading Image | Reads image from the computer |
 | **owimg** | Write Image | Write image in the computer |
@@ -46,7 +45,7 @@ This Extension can be installed from the Visual Studio Code Marketplace or by se
 | **osobedge** | Sobel Edge Detector| Edge Identification using Sobel Edge Detector |
 | **ocanny** | Canny Edge Detector| Edge Identification using Canny Edge Detector |
 | **ocontours** | Contours | Identifies and draw contours on the image |
-| **oshapedetect | Shape Detection | Detects shapes present in the image and writes the name of the shape in the image. |
+| **oshapedetect** | Shape Detection | Detects shapes present in the image and writes the name of the shape in the image. |
 | **omatchtem** | Template Matching | Matches template in any main image and draws rectangle around the identified template in the main image |
 | **ohough** | Hough Line Transformation | Detects straight lines of infinite length in the image. |
 | **ophough** | Probabilistic Hough Line Transform | Detects straight lines of finite length in the image. |
@@ -57,19 +56,20 @@ This Extension can be installed from the Visual Studio Code Marketplace or by se
 | **oaffn** | Affine Transformation | Returns the Affine Transformation of the image |
 | **orotate** | Rotate Image | Rotates the image by desired angle |
 
-## Features
+## Requirements
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Python3 should be installed in the system.
+> For installing python latest version you can head over to [python offcial website](https://www.python.org/).
+- Opencv library of python. This can be installed by executing the following command in the terminal or cmd.
+```bash
+    pip install opencv-python
+```
+- Numpy library of python. This can be installed by executing the following command in the terminal or cmd.
+> This need not be compulsorily installed but it is advised to install it because there are various snippets which require this library for better and smooth performance.
+```bash
+    pip install numpy
+```    
 
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Snippets:
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
 
 ## Extension Settings
 
@@ -82,9 +82,9 @@ This extension contributes the following settings:
 * `myExtension.enable`: enable/disable this extension
 * `myExtension.thing`: set to `blah` to do something
 
-## Known Issues
+## Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+Report issues and bugs at [Opencv Snippets](https://github.com/gsGupta11/opencv-snippets/issues)
 
 ## Release Notes
 
@@ -103,18 +103,19 @@ Fixed issue #.
 Added features X, Y, and Z.
 
 -----------------------------------------------------------------------------------------------------------
+## License
+Opencv Snippets is an open-sourced software licensed under the [GNU GENERAL PUBLIC LICENSE](https://github.com/gsGupta11/opencv-snippets/blob/master/LICENSE).
 
-## Working with Markdown
+## About Me
 
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
+- You can connect with me at linkedin:
+> [Linkedin-ID](https://www.linkedin.com/in/gauri-shankar-gupta-3661aa179/)
+- You can follow me on github:
+> [github-profile](https://github.com/gsGupta11)
 
 ### For more information
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+This is a open Source project, so for more information and contribution you can checkout:
+-[Opencv Snippets](https://github.com/gsGupta11/opencv-snippets) 
 
 **Enjoy!**
