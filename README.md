@@ -1,6 +1,6 @@
 # Opencv Snippets for Vs Code
 
-This Vs Code extension provides the user with [Opencv](https://opencv.org/) snippets in python. It helps in effectively providing, refactoring and editing the opencv projects in python3. All the snippets starts with a **o**, so typing a letter **o** gives recommendation for all the available opencv snippets.<br />
+This Vs Code extension provides the user with [Opencv](https://opencv.org/) snippets in python. It helps in effectively providing, refactoring and editing the opencv projects in python3. All the snippets starts with **"o"**, so typing a letter **o** gives recommendation for all the available opencv snippets.<br />
 Example -
 > This Example detects corner in the image. 
 ![example1](./static/corner.gif)<br />
