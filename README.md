@@ -1,14 +1,18 @@
 # Opencv Snippets for Vs Code
 
 This Vs Code extension provides the user with [Opencv](https://opencv.org/) snippets in python. It helps in effectively providing, refactoring and editing the opencv projects in python3. All the snippets starts with a **o**, so typing a letter **o** gives recommendation for all the available opencv snippets.<br />
-Example - 
-
+Example -
+> This Example detects corner in the image. 
 ![example1](./static/corner.gif)<br />
-![example2](./static/shape.gif)
+> This Example detects shapes in the image.<br />
+![example2](./static/shape.gif)<br />
+
+From the examples above, it can be easily seen that how easy and fast it become to code in Opencv by using this extension. It also saves you from any syntactical mistakes and increase your coding speed by many folds.   
 
 ## Installation:
 
-This Extension can be installed from the Visual Studio Code Marketplace or by searching within VS Code.
+This Extension can be installed from the Visual Studio Code Marketplace or by searching within VS Code. 
+> In VS code press ctrl+p and type **ext install extensionName** and press enter.
 
 ## Snippets:
 
@@ -70,37 +74,43 @@ This Extension can be installed from the Visual Studio Code Marketplace or by se
     pip install numpy
 ```    
 
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
 ## Issues
 
 Report issues and bugs at [Opencv Snippets](https://github.com/gsGupta11/opencv-snippets/issues)
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+The detailed release notes of Opencv Snippets can be found at -
+- [Opencv Snippets Release Notes](https://github.com/gsGupta11/opencv-snippets/blob/master/CHANGELOG.md) 
 
-### 1.0.0
+### v1.0.0
+- Initial Release of Opencv-Snippets 
+    * Basic Layout of the project setup
+    * Added Image and Video read/write snippets.
 
-Initial release of ...
+### v1.1.0
+- Added Multiple Snippets.
+- Snippets made more generic.
+- Code modularized.
 
-### 1.0.1
+### v1.1.1
+- Added gifs and icons.
+- readme prepared.
 
-Fixed issue #.
+### v1.1.2
+- Reformating of code.
+- Minor bug fixes.
 
-### 1.1.0
+### v1.2.0
+- More Snippets added.
+- Better handling of triggers.
+- Code quality improvements.
+- Code should run faster now.
 
-Added features X, Y, and Z.
+### v1.2.1
+- Improvements and bug fixes.
+- Code cleaned to make it more readable.
+- Comments added.
 
 -----------------------------------------------------------------------------------------------------------
 ## License
