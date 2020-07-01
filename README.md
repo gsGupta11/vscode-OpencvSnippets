@@ -116,6 +116,6 @@ Opencv Snippets is an open-sourced software licensed under the [GNU GENERAL PUBL
 ### For more information
 
 This is a open Source project, so for more information and contribution you can checkout:
--[Opencv Snippets](https://github.com/gsGupta11/opencv-snippets) 
+- [Opencv Snippets](https://github.com/gsGupta11/opencv-snippets) 
 
 **Enjoy!**
