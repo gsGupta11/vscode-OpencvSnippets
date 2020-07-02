@@ -31,7 +31,12 @@
         "Opencv-Python3",
         "Opencv Snippets",
         "cv2 Snippets",
-        "Image Processing Snippets"
+        "Image Processing Snippets",
+        "Open cv",
+        "opencv",
+        "opencv snippets",
+        "python opencv",
+        "python3 opencv"
     ],
     "contributes": {
         "snippets": [
