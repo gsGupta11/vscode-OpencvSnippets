@@ -19,6 +19,20 @@
         "Snippets"
     ],
     "icon":"./static/icon.png",
+    "keywords": [
+        "Opencv",
+        "Opencv-Python",
+        "Python Opencv",
+        "Python3 Opencv",
+        "Image Processing",
+        "cv2",
+        "cv",
+        "Opencv Python3",
+        "Opencv-Python3",
+        "Opencv Snippets",
+        "cv2 Snippets",
+        "Image Processing Snippets"
+    ],
     "contributes": {
         "snippets": [
             {
