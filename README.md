@@ -4,11 +4,11 @@ This Vs Code extension provides the user with [Opencv](https://opencv.org/) snip
 Example -
 > This Example detects corner in the image. <br />
 
-![example1](./static/corner.gif)<br />
+![example1](static/corner.gif)<br />
 
 > This Example detects shapes in the image.<br />
 
-![example2](./static/shape.gif)<br />
+![example2](static/shape.gif)<br />
 
 From the examples above, it can be easily seen that how easy and fast it become to code in Opencv by using this extension. It also saves you from any syntactical mistakes and increase your coding speed by many folds.   
 
