@@ -86,6 +86,10 @@ Report issues and bugs at [Opencv Snippets Issues](https://github.com/gsGupta11/
 The detailed release notes of Opencv Snippets can be found at -
 - [Opencv Snippets Release Notes](https://github.com/gsGupta11/vscode-OpencvSnippets/blob/master/CHANGELOG.md) 
 
+### v1.2.2
+- Bug fixes.
+- Keywords added.
+- Added more snippets.
 
 ### v1.2.1
 - Improvements and bug fixes.

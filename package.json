@@ -2,7 +2,7 @@
     "name": "opencv-snippets",
     "displayName": "Opencv Snippets",
     "description": "A snippets generator for Opencv",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "publisher": "gsGupta",
     "homepage": "https://github.com/gsGupta11/vscode-OpencvSnippets/blob/master/README.md",
     "repository": {
