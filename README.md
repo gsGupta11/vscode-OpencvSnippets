@@ -79,7 +79,7 @@ This Extension can be installed from the Visual Studio Code Marketplace or by se
 
 ## Issues
 
-Report issues and bugs at [Opencv Snippets](https://github.com/gsGupta11/vscode-OpencvSnippets/issues)
+Report issues and bugs at [Opencv Snippets Issues](https://github.com/gsGupta11/vscode-OpencvSnippets/issues)
 
 ## Release Notes
 
