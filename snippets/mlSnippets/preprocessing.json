@@ -2,7 +2,7 @@
     "csv data preprocessing":{
         "prefix":"!mcsv_pre",
         "body":[
-            "import pandas as pd",
+            
             "dataset = pd.read_csv(\"${1:Address of the csv file}\")",
             "# it is pre-ssumed that in csv file dependent vector y is present in the end line while feature vector occupy the other lines.",
             "# you can change accordingly",
@@ -15,9 +15,7 @@
     "image data preprocessing":{
         "prefix":"!mimage_pre",
         "body":[
-            "import os",
-            "import cv2",
-            "import numpy as np",
+            
             "dirname = \"${1:Address of dataset}\"",
             "dir_list = os.listdir(dirname)",
             "images =[cv2.imread(os.path.join(dirname,img),${2:flag}) for img in dir_list]",
@@ -36,7 +34,7 @@
         "prefix":"!mimg_gen",
         "body":[
             "from tensorflow.keras.preprocessing.image import ImageDataGenerator",
-            "import numpy as np",
+            
             "train_datagen = ImageDataGenerator(rescale=1./255, shear_range=0.2, zoom_range=0.2, horizontal_flip=True,)",
             "test_datagen = ImageDataGenerator(rescale=1./255)",
             "X_train = train_datagen.flow_from_directory(  \"${1:Address of training dataset}\", target_size=(${2:width of image},${3:height of image}), batch_size=${4:Batch_size} )",
