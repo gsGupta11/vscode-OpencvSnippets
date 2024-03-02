@@ -1,142 +1,108 @@
 {
-    "Simple Thresholding":{
-        "prefix":"othresh",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
+    "Simple Thresholding": {
+        "prefix": "othresh",
+        "body": [
             "ret, threshimg = cv2.threshold(${1:image}, ${2:thresholdValue}, ${3:maxVal}, cv2.${4:thresholdingTechnique})",
             "# Thresholding Technique - cv2.THRESH_BINARY,cv2.THRESH_BINARY_INV,cv2.THRESH_TRUNC,cv2.THRESH_TOZERO,cv2.THRESH_TOZERO_INV etc"
         ],
-        "description":"In this Simple Thresholding - For every pixel, the same threshold value is applied. If the pixel value is smaller than the threshold, it is set to 0, otherwise, it is set to a maximum value."
+        "description": "In this Simple Thresholding - For every pixel, the same threshold value is applied. If the pixel value is smaller than the threshold, it is set to 0, otherwise, it is set to a maximum value."
     },
-    "Adaptive Thresholding":{
-        "prefix":"oathresh",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
+    "Adaptive Thresholding": {
+        "prefix": "oathresh",
+        "body": [
             "threshimg = cv2.adaptiveThreshold(${1:img}, ${2:maxVal}, cv2.${3:adaptiveMethod}, cv2.${4:thresholdType}, ${5:blockSize}, ${6:constant})",
             "# Adaptive Method -  cv2.ADAPTIVE_THRESH_MEAN_C, cv2.ADAPTIVE_THRESH_GAUSSIAN_C"
         ],
-        "description":"In Adaptive thresholding, the threshold value is calculated for smaller regions. This leads to different threshold values for different regions with respect to the change in lighting and thus gives better results."
+        "description": "In Adaptive thresholding, the threshold value is calculated for smaller regions. This leads to different threshold values for different regions with respect to the change in lighting and thus gives better results."
     },
-    "Dilation":{
-        "prefix":"odilate",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
-            "import numpy as np",
+    "Dilation": {
+        "prefix": "odilate",
+        "body": [
             "kernel = np.ones((${1:size},${1:size}),np.uint8)",
             "dilatedimg = cv2.dilate(${2:image},kernel,iterations = ${3:number})"
         ],
-        "description":"Mainly used with binary images to remove the noise from them. It makes the object in white bigger."
+        "description": "Mainly used with binary images to remove the noise from them. It makes the object in white bigger."
     },
-    "Erosion":{
-        "prefix":"oerode",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
-            "import numpy as np",
+    "Erosion": {
+        "prefix": "oerode",
+        "body": [
             "kernel = np.ones((${1:size},${1:size}),np.uint8)",
             "erodedimg = cv2.erode(${2:image},kernel,iterations = ${3:number})"
         ],
-        "description":"Mainly used with binary images to remove the noise from them. It makes the object in white smaller."
+        "description": "Mainly used with binary images to remove the noise from them. It makes the object in white smaller."
     },
-    "MorphologyEx":{
-        "prefix":"omorphex",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
-            "import numpy as np",
+    "MorphologyEx": {
+        "prefix": "omorphex",
+        "body": [
             "kernel = np.ones((${1:size},${1:size}),np.uint8)",
             "morphedimg = cv2.morphologyEx(${2:image}, ${3:dst}, cv2.${4:TransformationType}, kernel)",
             "#TransformationType - MORPH_BLACKHAT, MORPH_CLOSE, MORPH_CROSS, MORPH_DILATE, MORPH_ELLIPSE, MORPH_ERODE, MORPH_GRADIENT, MORPH_OPEN, MORPH_RECT, MORPH_TOPHAT, etc"
         ],
-        "description":"Mainly used with binary images to remove the noise from them."
+        "description": "Mainly used with binary images to remove the noise from them."
     },
-    "Simple Blurring":{
-        "prefix":"oblur",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
+    "Simple Blurring": {
+        "prefix": "oblur",
+        "body": [
             "blurimg = cv2.blur(${1:image},(${2:kernelsize},${2:kernelsize}))"
         ],
-        "description":"Used for smoothning of image."
+        "description": "Used for smoothning of image."
     },
-    "Gaussian Blurring":{
-        "prefix":"ogblur",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
+    "Gaussian Blurring": {
+        "prefix": "ogblur",
+        "body": [
             "gblurimg = cv2.GaussianBlur(${1:image},(${2:kernelsize},${2:kernelsize}),0)"
         ],
-        "description":"Gaussian kernel is used to reduce image noise and detail"
+        "description": "Gaussian kernel is used to reduce image noise and detail"
     },
-    "Median Blur":{
-        "prefix":"omedblur",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
+    "Median Blur": {
+        "prefix": "omedblur",
+        "body": [
             "medblurimg = cv2.medianBlur(${1:image}, ${2:kernelSize})"
         ],
-        "description":"It is a non-linear digital filtering technique, often used to remove noise from an image or signal."
+        "description": "It is a non-linear digital filtering technique, often used to remove noise from an image or signal."
     },
-    "Bilateral Blur":{
-        "prefix":"obblur",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
+    "Bilateral Blur": {
+        "prefix": "obblur",
+        "body": [
             "bilateralimg = cv2.bilateralFilter(${1:image}, ${2:Diameter},${3:sigmaColor}, ${4:sigmaSpace})"
         ],
-        "description":"It is a non-linear, edge-preserving, and noise-reducing smoothing filter for images."
+        "description": "It is a non-linear, edge-preserving, and noise-reducing smoothing filter for images."
     },
-    "Laplacian Edge Detector":{
-        "prefix":"olapedge",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
-            "import numpy as np",
+    "Laplacian Edge Detector": {
+        "prefix": "olapedge",
+        "body": [
             "laplacianimg = cv2.Laplacian(${1:image},cv2.CV_64F,ksize=${2:number})",
             "laplacianimg = np.uint8(np.absolute(laplacianimg))"
         ],
-        "description":"Laplacian edge detector uses one kernel and calculates second order derivatives in a single pass."
+        "description": "Laplacian edge detector uses one kernel and calculates second order derivatives in a single pass."
     },
-    "Sobel Edge Detector":{
-        "prefix":"osobedge",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
-            "import numpy as np",
+    "Sobel Edge Detector": {
+        "prefix": "osobedge",
+        "body": [
             "sobelimg = cv2.Sobel(${1:image},cv2.CV_64F,${2:x},${3:y},ksize=${4:number})",
             "# x=1, y=0 for sobelX edge detector OR x=0, y=1 for sobelY edge detector"
         ],
-        "description":"It works on the first order derivatives and calculates the first derivatives of the image separately for the X and Y axes to detect edges."
+        "description": "It works on the first order derivatives and calculates the first derivatives of the image separately for the X and Y axes to detect edges."
     },
-    "Canny Edge Detector":{
-        "prefix":"ocanny",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
+    "Canny Edge Detector": {
+        "prefix": "ocanny",
+        "body": [
             "cannyimg = cv2.Canny(${1:image},${2:threshold1},${3:threshold2},apertureSize = ${4:number})"
         ],
-        "description":"Canny Edge Detection is one of the most popular edge detection algorithm."
+        "description": "Canny Edge Detection is one of the most popular edge detection algorithm."
     },
-    "Contours":{
-        "prefix":"ocontours",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
+    "Contours": {
+        "prefix": "ocontours",
+        "body": [
             "contours, hierarchy = cv2.findContours(${1:binaryImg}, cv2.${2:retrievalMode}, cv2.${3:approximation method})",
             "cv2.drawContours(${4:Image}, contours, ${5:contourIdx}, (0, 255, 0), ${6:thickness})       #Colors of contours is kept green by default",
             "#contourIdx = -1 if you want to draw all contours"
         ],
-        "description":"Contours are the line joining all the points along the boundary of an image that are having the same intensity."
+        "description": "Contours are the line joining all the points along the boundary of an image that are having the same intensity."
     },
-    "Shape Detection using Contours":{
-        "prefix":"oshapedetect",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
-            "import numpy as np",
+    "Shape Detection using Contours": {
+        "prefix": "oshapedetect",
+        "body": [
             "contours, hierarchy = cv2.findContours(${1:binaryImg}, cv2.${2:retrievalMode}, cv2.${3:approximation method})",
             "for cnt in contours:",
             "    approx = cv2.approxPolyDP(cnt, ${4:epsilonValue}, ${5:Boolean(True if closed polygon)})",
@@ -150,16 +116,12 @@
             "        cv2.putText(${6:Image}, \"Pentagon\", (x, y), cv2.FONT_HERSHEY_SIMPLEX, ${8:FontScale}, (0,255,0),${9:thickness})",
             "    else:",
             "        cv2.putText(${6:Image}, \"Closed Polygon\", (x, y), cv2.FONT_HERSHEY_SIMPLEX, ${8:FontScale}, (0,255,0),${9:thickness})"
-
         ],
-        "description":"Detects approx shape for each contour detected in the image."
+        "description": "Detects approx shape for each contour detected in the image."
     },
-    "Template Matching":{
-        "prefix":"omatchtemp",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
-            "import numpy as np",
+    "Template Matching": {
+        "prefix": "omatchtemp",
+        "body": [
             "res = cv2.matchTemplate(${1:grayImage},${2:graytemplateImage},cv2.${3:Method})",
             "# Methods - TM_CCOEFF_NORMED, TM_CCOEFF, TM_CCORR_NORMED",
             "threshold = ${4:thresholdValue}",
@@ -170,12 +132,9 @@
         ],
         "description": "Identifies where the template image is present in the main Image and mark it with a green rectangle."
     },
-    "Standard Hough Line Transform":{
-        "prefix":"ohough",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
-            "import numpy as np",
+    "Standard Hough Line Transform": {
+        "prefix": "ohough",
+        "body": [
             "lines = cv2.HoughLines(${1:BinaryImage(Canny)},${2:distanceResolution},${3:angleResolution},${4:threshold})",
             "for line in lines:",
             "    rho,theta = line[0]",
@@ -191,37 +150,29 @@
         ],
         "description": "Detects straight lines in the image even if they are bit distorted."
     },
-    "Probabilistic Hough Line Transform" :{
-        "prefix":"ophough",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
-            "import numpy as np",
+    "Probabilistic Hough Line Transform": {
+        "prefix": "ophough",
+        "body": [
             "lines = cv2.HoughLinesP(${1:BinaryImage(Canny)},${2:distanceResolution},${3:angleResolution},${4:threshold},minLineLength=${5:integer},maxLineGap=${6:integer})",
             "for line in lines:",
             "    x1,y1,x2,y2 = line[0]",
             "    cv2.line(${7:image},(x1,y1),(x2,y2),(0,255,0),${8:thickness})"
         ],
-        "description":"Detects straight lines of finite length in the image."
+        "description": "Detects straight lines of finite length in the image."
     },
-    "Haar Cascades":{
-        "prefix":"ohaarc",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
+    "Haar Cascades": {
+        "prefix": "ohaarc",
+        "body": [
             "cascade = cv2.CascadeClassifier('${1:Address of Downloaded Classifier}')",
             "coor = cascade.detectMultiScale(${2:grayimage}, ${3:scaleFactor}, ${4:minNeighbors}, ${5:minSize}, ${6:maxSize})",
             "for (x, y, w, h) in coor:",
             "    cv2.rectangle(${7:image},(x,y),(x+w,y+h),(0,255,0),${8:thickness})"
         ],
-        "description":"Trained models which can be used for identification of various parts of image such as face, eyes etc."
+        "description": "Trained models which can be used for identification of various parts of image such as face, eyes etc."
     },
-    "Harris Corner Detector":{
-        "prefix":"oharrisc",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
-            "import numpy as np",
+    "Harris Corner Detector": {
+        "prefix": "oharrisc",
+        "body": [
             "grayimg = cv2.cvtColor(${1:image},cv2.COLOR_BGR2GRAY)",
             "grayfloatimg = np.float32(grayimg)",
             "rscores = cv2.cornerHarris(grayfloatimg,${2:blockSize},${3:ksize},${4:freeParameter})",
@@ -229,59 +180,48 @@
             "threshold = 0.01*rscores.max()              # Threshold value can be changed according to the image and conditions.",
             "${1:image}[rscores>threshold] = [0,255,0]    # Corenrs now green Color."
         ],
-        "description":"Detects the corners in the image according the threshold setted."
+        "description": "Detects the corners in the image according the threshold setted."
     },
-    "Shi-Tomasi Corner Detector":{
-        "prefix":"ogoodf",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
-            "import numpy as np",
+    "Shi-Tomasi Corner Detector": {
+        "prefix": "ogoodf",
+        "body": [
             "corners = cv2.goodFeaturesToTrack(${1:grayimg},${2:NoofCorners},${3:quality},${4:minDistance})",
             "corners = np.int0(corners)",
             "for i in corners:",
             "    x,y = i.ravel()",
             "    cv2.circle(${5:image},(x,y),${6:radius},(0,255,0),-1)"
         ],
-        "description":"Detects corners in the image"
+        "description": "Detects corners in the image"
     },
-    "Perspective Transformation":{
-        "prefix":"opers",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
-            "import numpy as np",
+    "Perspective Transformation": {
+        "prefix": "opers",
+        "body": [
             "rows,cols,ch = ${1:image}.shape",
             "pts1 = np.float32([[${2:},${3:}], [${4:}, ${5:}], [${6:}, ${7:}], [${8:}, ${9:}]])        #Coordinates of corners of object in original Image.",
             "pts2 = np.float32([[${10:}, ${11:}], [${12:}, ${13:}], [${14:}, ${15:}], [${16:}, ${17:}]])",
             "M = cv2.getPerspectiveTransform(pts1, pts2)",
             "resultimg = cv2.warpPerspective(${1:image}, M, (cols, rows))"
         ],
-        "description":"Changes the perspective of the image or video for getting better insights about the required information"
+        "description": "Changes the perspective of the image or video for getting better insights about the required information"
     },
-    "Affine Transformation":{
-        "prefix":"oaffn",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
-            "import numpy as np",
+    "Affine Transformation": {
+        "prefix": "oaffn",
+        "body": [
             "rows,cols,ch = ${1:image}.shape",
             "pts1 = np.float32([[${2:},${3:}],[${4:},${5:}],[${6:},${7:}]])",
             "pts2 = np.float32([[${8:},${9:}],[${10:},${11:}],[${12:},${13:}]])",
             "M = cv2.getAffineTransform(pts1,pts2)",
             "resultimg = cv2.warpAffine(${1:image},M,(cols,rows))"
         ],
-        "description":"Linear mapping method that preserves points, straight lines, and planes."
+        "description": "Linear mapping method that preserves points, straight lines, and planes."
     },
-    "Rotation of Image":{
-        "prefix":"orotate",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
+    "Rotation of Image": {
+        "prefix": "orotate",
+        "body": [
             "rows,cols,_ = img.shape",
             "M = cv2.getRotationMatrix2D((cols/2,rows/2),${1:angle},${2:scale})",
             "rotated = cv2.warpAffine(${3:image},M,(cols,rows))"
         ],
-        "description":"Rotates the image by desired angle."
+        "description": "Rotates the image by desired angle."
     }
 }

@@ -1,89 +1,71 @@
 {
-    "Draw Line":{
-        "prefix":"oline",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
+    "Draw Line": {
+        "prefix": "oline",
+        "body": [
             "# Coordinates must be a tuple - (x,y)",
-            "cv2.line(${1:image},(${2:startCoor}),(${3:EndCoor}),(0,0,0),${4:thickness})                   #Color is by default black"   
+            "cv2.line(${1:image},(${2:startCoor}),(${3:EndCoor}),(0,0,0),${4:thickness})                   #Color is by default black"
         ],
-        "description":"Draw Line on any image"
+        "description": "Draw Line on any image"
     },
-    "Draw Arrowed Line":{
-        "prefix":"oaline",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
+    "Draw Arrowed Line": {
+        "prefix": "oaline",
+        "body": [
             "# Coordinates must be a tuple - (x,y)",
             "cv2.arrowedLine(${1:image},(${2:startCoor}),(${3:EndCoor}),(0,0,0),${4:thickness})                   #Color is by default black"
         ],
-        "description":"Draw a arrowed line from point1 to point2"
+        "description": "Draw a arrowed line from point1 to point2"
     },
-    "Draw Rectangle":{
-        "prefix":"orect",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
+    "Draw Rectangle": {
+        "prefix": "orect",
+        "body": [
             "# Coordinates must be a tuple - (x,y)",
             "cv2.rectangle(${1:image},(${2:topLeftCoor}),(${3:bottomRightCoor}),(0,0,0),${4:thickness})                   #Color is by default black"
         ],
-        "description":"Draw a rectangle on any image"
+        "description": "Draw a rectangle on any image"
     },
-    "Draw Circle":{
-        "prefix":"ocircle",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
+    "Draw Circle": {
+        "prefix": "ocircle",
+        "body": [
             "# Coordinates must be a tuple - (x,y)",
             "cv2.circle(${1:image},(${2:CenterCoordinates}), ${3:radius}, (0, 0, 0) ,${4:thickness})                     #Color is by default black"
         ],
-        "description":"Draw a Circle at any pt in the image"
+        "description": "Draw a Circle at any pt in the image"
     },
-    "Draw Ellipse":{
-        "prefix":"oellipse",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
+    "Draw Ellipse": {
+        "prefix": "oellipse",
+        "body": [
             "#Coordinates must be a tuple - (x,y)",
             "cv2.ellipse(${1:image},(${2:CenterCoordinates}),(${4:height},${5:width}),${6: RotationAngle},${7:startingAngle},${8:finalangle},(0, 0, 0),${9:thickness})                        #Color is by default black"
         ],
-        "description" :"Draw a Ellipse over the image"
+        "description": "Draw a Ellipse over the image"
     },
-    "Draw any polygon":{
-        "prefix":"opoly",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
+    "Draw any polygon": {
+        "prefix": "opoly",
+        "body": [
             "cv2.polylines(${1:image},[${2:coordinates}],${3:Boolean(True if closed polygon)},(0,0,0))                   #Color is by default black"
         ],
-        "description":"Draw any polygon on any image"
+        "description": "Draw any polygon on any image"
     },
-    "Write Text":{
-        "prefix":"otext",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
+    "Write Text": {
+        "prefix": "otext",
+        "body": [
             "font = cv2.${1:fontstyle}",
             "cv2.putText(${2:image}, \"${3:text}\", (${4:Coordinates}),font, ${5:fontsize}, (0, 0, 0),${6:thickness}, cv2.${7:LineType})"
         ],
-        "description":"Draw any text on any image"
+        "description": "Draw any text on any image"
     },
-    "Print all Events":{
-        "prefix":"olistevents",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
+    "Print all Events": {
+        "prefix": "olistevents",
+        "body": [
             "for i in dir(cv2):",
             "    if \"EVENT\" in i:",
             "        print(i)"
         ],
-        "description":"Enlists all the events available in opencv"
+        "description": "Enlists all the events available in opencv"
     },
-    "Handle Evnets":{
-        "prefix":"ohmevent",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
+    "Handle Evnets": {
+        "prefix": "ohmevent",
+        "body": [
             "def handle_event(event, x, y, flags, param):",
             "    if event == cv2.${1:Event Name}:",
             "    # Do Whatever you want to, when the event occurs",
@@ -91,43 +73,36 @@
             "cv2.setMouseCallback(\"${2:Window Name}\", handle_event)",
             "# Attach a image (On which you want to handle the event) to the same window (${2:Window Name})."
         ],
-        "description":"Provide basic layout to handle all mouse events."
+        "description": "Provide basic layout to handle all mouse events."
     },
-    "Create Trackbar":{
-        "prefix":"octrack",
-        "body":[
+    "Create Trackbar": {
+        "prefix": "octrack",
+        "body": [
             "# The function attached to the trackbar.",
             "def func(pos):",
             "    print(pos)",
-            "#Import only if not previously imported",
-            "import cv2",
             "cv2.namedWindow(\"${1:WindowName}\")",
             "cv2.createTrackbar('${2:TrackbarName}', \"${1:WindowName}\", ${3:Intialpos}, ${4:FinalPos}, func)"
         ],
-        "description":"Creates a trackbar on the Same Window."
+        "description": "Creates a trackbar on the Same Window."
     },
-    "Getting Trackbar Position":{
-        "prefix":"otrackpos",
-        "body":[
+    "Getting Trackbar Position": {
+        "prefix": "otrackpos",
+        "body": [
             "cv2.getTrackbarPos(\"${1:TrackbarName}\",\"${2:WindowName}\")"
         ],
-        "description":"Gives the position of trackbar at any time."
+        "description": "Gives the position of trackbar at any time."
     },
-    "Convert Color":{
-        "prefix":"ocvtcolor",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
+    "Convert Color": {
+        "prefix": "ocvtcolor",
+        "body": [
             "${1:variablename} = cv2.cvtColor(${2:image},cv2.COLOR_${3:code})"
         ],
-        "description":"Converts the color of image from one format to other"
+        "description": "Converts the color of image from one format to other"
     },
-    "HSV Color Indentification":{
-        "prefix":"ohsvcoloriden",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
-            "import numpy as np",
+    "HSV Color Indentification": {
+        "prefix": "ohsvcoloriden",
+        "body": [
             "hsv = cv2.cvtColor(${1:image}, cv2.COLOR_BGR2HSV)",
             "lower_color_range = np.array([${2:lower hue},${3:lower saturation},${4:lower value}])",
             "upper_color_range = np.array([${5:upper hue},${6:upper saturation},${7:upper value}])",
@@ -135,6 +110,6 @@
             "res = cv2.bitwise_and(${8:image},${8:image}, mask= mask)",
             "# The colored identified image is res."
         ],
-        "description":"Can find object of a particular color in the image."
+        "description": "Can find object of a particular color in the image."
     }
 }

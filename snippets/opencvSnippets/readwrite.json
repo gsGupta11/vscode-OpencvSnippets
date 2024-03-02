@@ -1,41 +1,30 @@
 {
-    "Read Image":{
-        "prefix":"orimg",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
+    "Read Image": {
+        "prefix": "orimg",
+        "body": [
             "${1:VariableName} = cv2.imread(\"${2:Address}\",${3:flag})     #(flag = 0 or 1 or -1)"
         ],
-        "description":"Read Image locally from any directory of the PC"
+        "description": "Read Image locally from any directory of the PC"
     },
-    
-    "Write Image":{
-        "prefix":"owimg",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
+    "Write Image": {
+        "prefix": "owimg",
+        "body": [
             "cv2.imwrite(\"${1:Write Address}\",${2:ImageMatrix})"
         ],
-        "description":"Writing Image in any directory in the pc"
+        "description": "Writing Image in any directory in the pc"
     },
-    
-    "Display Image":{
-        "prefix":"odis",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
+    "Display Image": {
+        "prefix": "odis",
+        "body": [
             "cv2.imshow(\"${1:Window Name}\",${2: ImageMatrix})",
             "cv2.waitKey(${3:time of displaying})",
             "cv2.destroyAllWindows()"
         ],
-        "description":"Display the already read Image"
+        "description": "Display the already read Image"
     },
-
-    "Read Video":{
-        "prefix":"orvid",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
+    "Read Video": {
+        "prefix": "orvid",
+        "body": [
             "# In VideoCapture object either Pass address of your Video file",
             "# Or If the input is the camera, pass 0 instead of the video file",
             "cap = cv2.VideoCapture(${1:VideoToRead})",
@@ -54,13 +43,11 @@
             "cap.release()",
             "cv2.destroyAllWindows()"
         ],
-        "description":"Reading a Video from Camera or any file"
+        "description": "Reading a Video from Camera or any file"
     },
-    "Write Video":{
-        "prefix":"owvid",
-        "body":[
-            "#Import only if not previously imported",
-            "import cv2",
+    "Write Video": {
+        "prefix": "owvid",
+        "body": [
             "# Create a Video Reader Object.",
             "cap = cv2.VideoCapture(${1:VideoToRead})",
             "if cap.isOpened() == False:",
@@ -83,6 +70,6 @@
             "writer.release()",
             "cv2.destroyAllWindows()"
         ],
-        "description":"Writing a Video in any directory of the PC"
+        "description": "Writing a Video in any directory of the PC"
     }
 }
